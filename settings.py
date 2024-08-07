@@ -5,3 +5,5 @@ class Settings:
         self.screenHeight = 1100
         
         self.backgroundColor = ((0, 0, 0))
+        
+        self.player_speed = 2
