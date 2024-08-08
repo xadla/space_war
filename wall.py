@@ -14,4 +14,3 @@ class Wall():
 
     def blitme(self):
         self.screen.blit(self.image, self.image_rect)
-    

@@ -19,16 +19,34 @@ class RocketTwo:
         
         self.speed = ai_screen.settings.player_speed
         
+        self.walls = ai_screen.walls
+        self.opponent = ai_screen.rocket_one
+        
     def blitme(self):
         self.screen.blit(self.image, self.image_rect)
 
     def update_location(self):
         if self.moving_left and self.image_rect.x > 0:  
-            self.image_rect.x -= self.speed 
+            self.image_rect.x -=  self.speed
+            if self.colid():
+                self.image_rect.x += self.speed
         elif self.moving_right and self.image_rect.x < self.screen_rect.right - 80:  
             self.image_rect.x += self.speed  
+            if self.colid():
+                self.image_rect.x -= self.speed
 
         if self.moving_up and self.image_rect.y > 0:  
             self.image_rect.y -= self.speed 
+            if self.colid():
+                self.image_rect.y += self.speed
         elif self.moving_down and self.image_rect.y < self.screen_rect.bottom - 80: 
             self.image_rect.y += self.speed
+            if self.colid():
+                self.image_rect.y -= self.speed
+    def colid(self):
+        for wall in self.walls:
+            if self.image_rect.colliderect(wall.image_rect):
+                return True
+        if self.image_rect.colliderect(self.opponent.image_rect):
+            return True
+        return False
