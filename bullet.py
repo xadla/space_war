@@ -29,7 +29,7 @@ class Bullet(Sprite):
             self.x = shooter.image_rect.centerx  
             self.y = shooter.image_rect.bottom  
 
-        self.rect = pygame.Rect(self.x, self.y, self.radius * 2, self.radius * 2)  
+        self.rect = pygame.Rect(self.x, self.y, self.radius * 2, self.radius * 2)
 
     def update(self):  
         if self.arrow == 0:  # Right  

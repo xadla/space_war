@@ -35,7 +35,7 @@ class RocketOne:
             if self.colid():
                 self.image_rect.x -= self.speed
 
-        if self.moving_up and self.image_rect.y > 0:  
+        if self.moving_up and self.image_rect.y > 100:  
             self.image_rect.y -= self.speed 
             if self.colid():
                 self.image_rect.y += self.speed
@@ -52,3 +52,6 @@ class RocketOne:
         return False
     def set_opponent(self, rocket):
         self.rocket_two = rocket
+
+    def return_place(self):
+        self.image_rect.midleft = self.screen_rect.midleft

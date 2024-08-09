@@ -35,7 +35,7 @@ class RocketTwo:
             if self.colid():
                 self.image_rect.x -= self.speed
 
-        if self.moving_up and self.image_rect.y > 0:  
+        if self.moving_up and self.image_rect.y > 100:  
             self.image_rect.y -= self.speed 
             if self.colid():
                 self.image_rect.y += self.speed
@@ -50,3 +50,6 @@ class RocketTwo:
         if self.image_rect.colliderect(self.opponent.image_rect):
             return True
         return False
+
+    def return_place(self):
+        self.image_rect.midright = self.screen_rect.midright
