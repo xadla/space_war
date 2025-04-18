@@ -39,7 +39,7 @@
 3. Run the game
 
 ```bash
-git clone https://github.com/yourusername/space-war.git
+git clone git@github.com:xadla/space_war.git
 cd space-war
 pip install -r requirements.txt
 python main.py
