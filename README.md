@@ -42,7 +42,7 @@
 git clone git@github.com:xadla/space_war.git
 cd space-war
 pip install -r requirements.txt
-python main.py
+python space_war.py
 ```
 
 ## 🎨 Features
